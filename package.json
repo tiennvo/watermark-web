@@ -6,13 +6,13 @@
   "license": "MIT",
   "homepage": "https://watermarkktp.com",
   "scripts": {
-    "build": "npm run update-submodule && npm run tailwind:prod && eleventy",
+    "build": "npm run tailwind:prod && eleventy",
     "serve": "eleventy --serve",
     "format": "prettier --write '**/*.{js,css,html,md}'",
     "tailwind:dev": "npx postcss src/_includes/css/tailwind.css --o src/_includes/css/app.css --watch",
     "tailwind:prod": "npx postcss src/_includes/css/tailwind.css --o src/_includes/css/app.css",
     "dev": "concurrently \"npm run tailwind:dev\" \"npm run serve\"",
-    "update-submodule": "git submodule update --recursive --remote"
+    "update-submodule": "git submodule update --recursive --remote || true"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
