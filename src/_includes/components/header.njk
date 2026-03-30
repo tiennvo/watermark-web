@@ -1,0 +1,103 @@
+
+<div class="relative bg-white">
+  <div class="border-b-[1.5px] border-gray-300">
+    <div class="max-w-7xl mx-auto px-6">
+      <div
+        class="flex justify-between items-center py-4 lg:justify-start lg:space-x-10"
+      >
+        <div class="text-2xl font-bold">
+          <a href="/" class="flex items-center">
+            <img
+              src="/img/logo-watermarkktp.svg"
+              alt="Watermark"
+              class="w-6 h-6 mr-1"
+            />
+            {%- if page.url == "/" or page.url == "/ttd-online/" %}
+              <h1>Watermark</h1>
+            {% else %}
+              <h2>Watermark</h2>
+            {% endif %}
+          </a>
+        </div>
+        <div class="-mr-2 -my-2 lg:hidden">
+          <button
+            type="button"
+            class="bg-white rounded-md p-2 inline-flex flex-col items-center justify-between h-[29px] text-gray-500 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            aria-expanded="false"
+            onclick="toggle_menu()"
+          >
+            <span class="sr-only">Open menu</span>
+            <span
+              class="w-5 h-0.5 bg-gray-400 rounded-lg duration-300"
+              id="line-1"
+            ></span>
+            <span
+              class="w-5 h-0.5 bg-gray-400 rounded-lg duration-300"
+              id="line-2"
+            ></span>
+            <span
+              class="w-5 h-0.5 bg-gray-400 rounded-lg duration-300"
+              id="line-3"
+            ></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="inset-x-0 pt-6 px-6 transition transform origin-top-right hidden mb-8"
+    id="menu"
+  >
+    <div
+      class="rounded-lg border border-gray-300 shadow ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50"
+    >
+      <div class="pt-5 pb-6 px-5">
+        <div>
+          <nav class="grid gap-y-8">
+            <a
+              href="/promosi/"
+              class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+            >
+              <i class="ri-fire-line text-2xl"></i>
+              <span class="ml-3 text-base font-medium text-gray-900">
+                Promosi
+              </span>
+            </a>
+
+            <a
+              href="https://github.com/sirilius/watermarkktp"
+              class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+              data-umami-event="mobile-menu-GitHub"
+            >
+              <i class="ri-github-fill text-2xl"></i>
+              <span class="ml-3 text-base font-medium text-gray-900">
+                GitHub
+              </span>
+            </a>
+
+            <a
+              href="https://x.com/SiriliusKevin"
+              class="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50"
+              data-umami-event="mobile-menu-Twitter"
+            >
+              <i class="ri-twitter-x-line text-xl"></i>
+              <span class="ml-3 text-base font-medium text-gray-900">
+                Twitter / X
+              </span>
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div class="px-5 pt-0 pb-5 space-y-6 flex flex-wrap">
+        <a
+          href="/donate/"
+          class="w-full px-4 py-2 border border-transparent rounded-md text-base font-medium text-white text-center bg-blue-500 text-blue shadow-3d-blue-button bg-gradient-to-b from-gradient-btn-from to-gradient-btn-to bg-no-repeat hover:opacity-80"
+          data-umami-event="mobile-menu-Saweria"
+        >
+          Donasi
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

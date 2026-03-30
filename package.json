@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "name": "watermarkktp",
+  "description": "A simple tool to add watermark to KTP scan.",
+  "author": "Sirilius Kevin",
+  "license": "MIT",
+  "homepage": "https://watermarkktp.com",
+  "scripts": {
+    "build": "npm run update-submodule && npm run tailwind:prod && eleventy",
+    "serve": "eleventy --serve",
+    "format": "prettier --write '**/*.{js,css,html,md}'",
+    "tailwind:dev": "npx postcss src/_includes/css/tailwind.css --o src/_includes/css/app.css --watch",
+    "tailwind:prod": "npx postcss src/_includes/css/tailwind.css --o src/_includes/css/app.css",
+    "dev": "concurrently \"npm run tailwind:dev\" \"npm run serve\"",
+    "update-submodule": "git submodule update --recursive --remote"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^3.1.1",
+    "@11ty/eleventy-navigation": "^0.3.2",
+    "@11ty/eleventy-plugin-rss": "^1.2.0",
+    "@11ty/eleventy-plugin-webc": "^0.11.1",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.7",
+    "clean-css": "^5.2.4",
+    "concurrently": "^7.2.2",
+    "cssnano": "^6.0.1",
+    "html-minifier": "^4.0.0",
+    "luxon": "^3.4.3",
+    "postcss-cli": "^10.0.0",
+    "prettier": "^3.6.2",
+    "sharp": "^0.32.6",
+    "tailwindcss": "^3.1.4",
+    "terser": "^5.12.0"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0.30001751",
+    "csrf": "^3.1.0",
+    "dotenv": "^16.4.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirilius/watermarkktp.git"
+  }
+}

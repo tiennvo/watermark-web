@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  @apply transition duration-300;
+}
+
+#colorPicker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+#colorPicker::-webkit-color-swatch {
+  border: none;
+  border-radius: 0.375rem;
+}
+
+.adv::before {
+  content: "Advertisement";
+  @apply flex absolute z-10 text-sm text-gray-500 items-center justify-center w-full h-full;
+}
+
+.adsbygoogle[data-ad-status="filled"] {
+  z-index: 20;
+}
+
+.featured-image figcaption {
+  @apply text-xs;
+}
+
+.featured-image figcaption::before {
+  @apply bg-red-600 rounded-full inline-block h-2 w-2 relative align-middle;
+  content: "";
+  top: -1px;
+  margin-right: 6px;
+}
+
+.adsbygoogle.adsbygoogle-noablate {
+  @apply z-40 !important;
+}
+
+@media (min-width: 1208px) {
+  #as-seen-in {
+    margin-top: 0;
+  }
+}

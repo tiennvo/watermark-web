@@ -1,0 +1,50 @@
+<div class="mt-8 mb-16 flex flex-wrap justify-center items-start">
+  <div
+    class="mr-0 lg:mr-6 mb-6 p-4 w-full lg:w-80 rounded-xl border border-gray-300 shadow"
+  >
+    <div class="mb-4 flex">
+      <input
+        class="absolute hidden"
+        type="file"
+        id="inputFile"
+        accept="image/*"
+      />
+      <label
+        class="truncate w-full py-2 px-4 bg-black shadow-3d-black-button bg-gradient-to-b from-gradient-btn-from to-gradient-btn-to bg-no-repeat hover:opacity-80 duration-300 font-medium text-white rounded-lg cursor-pointer text-center"
+        for="inputFile"
+      >
+        Tiennvo
+      </label>
+      <p id="error"></p>
+    </div>
+
+    <div class="flex">
+      <button
+        id="reset"
+        class="p-2 mr-4 w-1/2 flex items-center justify-center border-2 border-red-500 text-red-500 rounded-lg group font-medium"
+      >
+        <i class="ri-loop-left-line text-xl mr-1 group-hover:-rotate-180 duration-300"></i>
+        Reset
+      </button>
+
+      <a class="contents" id="download" download="watermark.png"
+        ><button
+          class="p-2 w-1/2 flex items-center justify-center bg-blue-500 text-blue shadow-3d-blue-button bg-gradient-to-b from-gradient-btn-from to-gradient-btn-to bg-no-repeat rounded-lg group font-medium text-white"
+        >
+          <i class="ri-download-line text-xl mr-1 group-hover:translate-y-[2px] duration-200"></i>
+          Download
+        </button></a
+      >
+    </div>
+  </div>
+
+  <canvas
+    id="canvas"
+    width="800"
+    height="550"
+    class="border border-gray-300 shadow rounded-xl w-full max-w-3xl"
+  >
+    Yahh! Browser kamu tidak mendukung Watermark KTP. Coba dengan browser
+    lainnya.
+  </canvas>
+</div>

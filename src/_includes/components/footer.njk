@@ -1,0 +1,79 @@
+{% if page.url != "/404.html" %}
+{% endif %}
+  
+<footer class="mt-16 border-t-2 border-gray-200 bg-gray-100">
+  <div
+    class="flex justify-between flex-col lg:flex-row space-y-8 lg:space-y-0 max-w-6xl mx-auto py-12 px-6 lg:px-8"
+  >
+    <div class="lg:w-2/6 space-y-4">
+      <div class="text-sm text-center lg:text-left space-y-2">
+        <div class="flex items-center justify-center lg:justify-normal">
+          <img
+            src="/img/logo-watermarkktp.svg"
+            alt="Watermark"
+            class="w-6 h-6 mr-1"
+          />
+          <span class="text-2xl font-bold">Watermark</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center lg:justify-end lg:w-5/6">
+      <div class="grid grid-cols-2 gap-x-6 gap-y-8 lg:w-5/6 sm:grid-cols-4">
+        {% for item in nav %}
+        <div class="flex flex-col space-y-4">
+          <h3 class="font-semibold">{{ item.name }}</h3>
+
+          <ul class="space-y-2">
+            {% for content in item.content %}
+            <li>
+              <a
+                href={{ content.link }}
+                class="text-sm text-gray-700 hover:text-gray-900"
+              >
+                {{ content.name }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="w-full flex items-center flex-col text-gray-500 text-sm space-y-2 pt-8 pb-9 border-t-2 border-gray-200"
+  >
+  </div>
+</footer>
+
+  
+  {%- set js %}
+  {% if page.url == "/" %}
+    {% include "js/html2canvas.js" %}
+    {% include "js/watermark.js" %}
+  {% endif %}
+  {% if page.url == "/ttd-online/" %}
+    {% include "js/signature_pad.js" %}
+    {% include "js/signature.js" %}
+  {% endif %}
+  {% include "js/mobile-menu.js" %}
+  {% include "js/faq.js" %}
+  {% endset %}
+  <script>{{ js | jsmin | safe }}</script>
+
+  <script>
+    window.addEventListener("load", function () {
+      const watermarkktpStatus = document.createElement("iframe");
+      watermarkktpStatus.src = "https://status.watermarkktp.com/badge";
+      watermarkktpStatus.width = "200";
+      watermarkktpStatus.height = "30";
+      watermarkktpStatus.frameBorder = "0";
+      watermarkktpStatus.scrolling = "no";
+      watermarkktpStatus.classList.add("text-center");
+      watermarkktpStatus.loading = "lazy";
+      document.getElementById("watermarkktpStatus").replaceWith(watermarkktpStatus);
+    });
+  </script>
+  

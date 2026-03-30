@@ -1,0 +1,18 @@
+# Generic
+node_modules/
+.env
+.log
+.cache
+yarn.lock
+**/.DS_Store
+bun.lockb
+
+# App-specific
+_site/
+src/_includes/css/app.css
+
+# Local Netlify folder
+.netlify
+
+# local env files
+.env*.local
