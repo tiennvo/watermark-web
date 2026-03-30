@@ -10,7 +10,7 @@
     "serve": "eleventy --serve",
     "format": "prettier --write '**/*.{js,css,html,md}'",
     "tailwind:dev": "npx postcss src/_includes/css/tailwind.css --o src/_includes/css/app.css --watch",
-    "tailwind:prod": "npx postcss src/_includes/css/tailwind.css -o src/_includes/css/app.css",
+    "tailwind:prod": "npx tailwindcss -i src/_includes/css/tailwind.css -o src/_includes/css/app.css --minify",
     "dev": "concurrently \"npm run tailwind:dev\" \"npm run serve\"",
     "update-submodule": "git submodule update --recursive --remote || true"
   },
